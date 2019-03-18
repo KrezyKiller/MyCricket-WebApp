@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-<style media="screen">
-    .d{
-      border: 5px solid red;
-    }
-</style>
+{% extends 'home_app/home_base.html' %}
+{% block content %}
+      {% include 'home_app/slide_show.html' %}
 
-    </head>
-  <body>
+      {% include 'home_app/card.html' %}
 
-
-    <div class="d" >
-
-    {{ matches }}
-    </div>
-
-
-
-  </body>
-</html>
+{% endblock %}
