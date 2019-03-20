@@ -8,5 +8,4 @@ c = Cricbuzz()
 def home(request):
     matches = c.matches()
     send = {'matches' : matches}
-    print(matches)
     return render(request, 'home_app/home.html', send)

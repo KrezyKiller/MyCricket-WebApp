@@ -1,3 +1,4 @@
+{% load static %}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -9,7 +10,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="https://imageresizer.static9.net.au/VdRRQSk6ujBumIbAytA8yp37dpI=/600x338/smart/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2F2016%2F01%2F07%2F14%2F28%2Fcricket-opener-160107.jpg" alt="Chania">
+      <img src="{% static 'Media/pic1.jpg' %}" alt="Chania">
       <div class="carousel-caption">
         <h3>Los Angeles</h3>
         <p>LA is always so much fun!</p>
@@ -17,7 +18,7 @@
     </div>
 
     <div class="item">
-      <img src="https://images.indianexpress.com/2018/06/bangladesh-cricket-759.jpg" alt="Chicago">
+      <img src="{% static 'Media/pic2.jpg' %}" alt="Chicago">
       <div class="carousel-caption">
         <h3>Chicago</h3>
         <p>Thank you, Chicago!</p>
@@ -25,7 +26,7 @@
     </div>
 
     <div class="item">
-      <img src="https://cdn.images.express.co.uk/img/dynamic/68/590x/Bangladesh-take-on-New-Zealand-in-Ireland-today-808620.jpg" alt="New York">
+      <img src="{% static 'Media/pic1.jpg' %}" alt="New York">
       <div class="carousel-caption">
         <h3>New York</h3>
         <p>We love the Big Apple!</p>

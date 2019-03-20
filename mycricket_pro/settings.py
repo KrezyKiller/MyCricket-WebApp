@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     'scorepage.apps.ScorepageConfig',
     'home_app.apps.HomeAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
