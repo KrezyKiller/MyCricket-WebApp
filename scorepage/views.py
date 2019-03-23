@@ -6,13 +6,19 @@ def score(request, id):
    score = c.scorecard(id)
    info = c.matchinfo(id)
    commentary = c.commentary(id)
-   send = {
-            'team1':score['scorecard'][0],
-            'team2':score['scorecard'][1],
-            'matchinfo': info,
-            'commentary':commentary,
-            'bowlcard_1':score['scorecard'][0]['bowlcard']
-            }
+   print(c.matchinfo(id))
+   send = {      'team1':score['scorecard'][0],
+                 'bowlcard_1':score['scorecard'][0]['bowlcard'],
+                 'matchinfo': info,
+                 'commentary':commentary,
+                 }
+   if info['mchstate'] == 'mom' or 'inprogress' or 'innings break':
+      try:
+          send['team2'] = score['scorecard'][1]
+          send['bowlcard_2'] = score['scorecard'][1]['bowlcard']
 
-   print()
-   return render(request, 'score/score.html', send)
+      except:
+          send['team2'] = ['None']
+
+
+   return render(request, 'score/score.html',send)
