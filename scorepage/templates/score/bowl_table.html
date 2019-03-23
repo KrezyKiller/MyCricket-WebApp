@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>blowler</th>
+                <th>O</th>
+                <th>MI</th>
+                <th>R</th>
+                <th>WK</th>
+                <th>W</th>
+                <th>NB</th>
+
+             </tr>
+         </thead>
+         <tbody>
+           {% for i in bowlcard_1 %}
+           <tr>
+               <td>{{ i.name }}</td>
+               <td>{{ i.overs }}</td>
+               <td>{{ i.maidens }}</td>
+               <td>{{ i.runs }}</td>
+               <td>{{ i.wickets }}</td>
+               <td>{{ i.wides }}</td>
+               <td>{{ i.nballs }}</td>
+
+           </tr>
+           {% endfor %}
+         </tbody>
+      </table>
+   </div>
+ </div>
+
+</div>
