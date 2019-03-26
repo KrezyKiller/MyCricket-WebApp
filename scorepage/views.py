@@ -7,18 +7,23 @@ def score(request, id):
    info = c.matchinfo(id)
    commentary = c.commentary(id)
    print(commentary)
-   send = {
-                 'matchinfo': info,
+   send = {      'matchinfo': info,
                  'commentary':commentary['commentary'],
                  }
-   if info['mchstate'] == 'mom' or 'inprogress' or 'innings break':
-      try:
-          send['status'] = 'Ok'
-          send['team1'] = score['scorecard'][0]
-          send['bowlcard_1'] = score['scorecard'][0]['bowlcard'],
-          send['team2'] = score['scorecard'][1]
-          send['bowlcard_2'] = score['scorecard'][1]['bowlcard']
-      except:
-          send['team2'] = ['None']
-          send['status'] = 'Preview'
-   return render(request, 'score/score.html',send)
+   print(info)
+   try:
+               send['stat']     = info['mchstate']
+               send['team1']      = score['scorecard'][0]
+               send['bowlcard_1'] = score['scorecard'][0]['bowlcard'],
+               send['team2']      = score['scorecard'][1]
+               send['bowlcard_2'] = score['scorecard'][1]['bowlcard']
+   except:
+        try:
+              send['stat']     = info['mchstate']
+              send['team1']      = score['scorecard'][0]
+              send['bowlcard_1'] = score['scorecard'][0]['bowlcard'],
+        except:
+             send['stat']  = info['mchstate']
+
+   print(send['stat'])
+   return render(request, 'score/score.html', send)
