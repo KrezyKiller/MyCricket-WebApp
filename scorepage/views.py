@@ -10,20 +10,18 @@ def score(request, id):
    send = {      'matchinfo': info,
                  'commentary':commentary['commentary'],
                  }
-   print(info)
    try:
                send['stat']     = info['mchstate']
                send['team1']      = score['scorecard'][0]
-               send['bowlcard_1'] = score['scorecard'][0]['bowlcard'],
+               send['bowlcard_1'] = score['scorecard'][0]['bowlcard']
                send['team2']      = score['scorecard'][1]
                send['bowlcard_2'] = score['scorecard'][1]['bowlcard']
    except:
         try:
               send['stat']     = info['mchstate']
               send['team1']      = score['scorecard'][0]
-              send['bowlcard_1'] = score['scorecard'][0]['bowlcard'],
+              send['bowlcard_1'] = score['scorecard'][0]['bowlcard']
+
         except:
              send['stat']  = info['mchstate']
-
-   print(send['stat'])
    return render(request, 'score/score.html', send)

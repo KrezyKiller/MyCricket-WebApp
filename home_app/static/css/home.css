@@ -1,10 +1,9 @@
 
 body{
-  /* background-image: linear-gradient(to right, #B3FFAB , #12FFF7); */
+  background-image: gray;
 }
 #card_outer{
   padding-top: 5px;
-    border-top: 1px solid red;
     width: 350px;
     height: 200px;
     margin: 15px;
