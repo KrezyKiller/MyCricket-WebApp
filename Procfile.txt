@@ -1,1 +1,2 @@
 web: gunicorn mycricket_pro.wsgi 
+web: bundle exec rails server -p $PORT
